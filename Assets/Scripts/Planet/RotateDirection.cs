@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum PlanetMovement
+public enum RotateDirection
 {
     Сlockwise,
     Counterclockwise

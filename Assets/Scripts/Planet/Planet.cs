@@ -5,15 +5,20 @@ public class Planet
 {
     
     // init this in constructor
-    private int _distance;
-    private PlanetMovement _movement;
+    private float _distance;
+    private RotateDirection _rotateDirection;
     private int _goldPoints;
     private int _gasPoints;
 
-    public Planet()
+    private float _rotationSpeed = 0;
+
+    public Planet(float distance, RotateDirection rotateDirection, int goldPoints, int gasPoints, float rotationSpeed)
     {
-        // TODO
-        throw new NotImplementedException();
+        _distance = distance;
+        _rotateDirection = rotateDirection;
+        _goldPoints = goldPoints;
+        _gasPoints = gasPoints;
+        _rotationSpeed = rotationSpeed;
     }
     
     // inner vars
