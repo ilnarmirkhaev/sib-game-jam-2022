@@ -20,8 +20,6 @@ public class PlanetRotationBehaviourScript : MonoBehaviour
         _distanceVector = - sun.transform.position + transform.position;
 
         var planetMovement = rotateDirection < 0 ? RotateDirection.Counterclockwise : RotateDirection.Сlockwise;
-        
-        _planet = new Planet(_distanceVector.magnitude, planetMovement, goldPoints,gasPoints, rotationSpeed);
     }
 
     // Update is called once per frame
