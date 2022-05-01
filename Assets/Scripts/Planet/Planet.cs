@@ -71,4 +71,9 @@ public class Planet
     {
         return _countOfCannons;
     }
+
+    public static void Generate()
+    {
+        throw new NotImplementedException();
+    }
 }
