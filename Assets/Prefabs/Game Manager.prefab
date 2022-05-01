@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab8879a88c92274d9e729ecff093a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbitCount: 3
+  sun: {fileID: 0}
+  planetPrefab: {fileID: 1879646234381873115, guid: 2802f07553ee33349985df3338f56116, type: 3}
