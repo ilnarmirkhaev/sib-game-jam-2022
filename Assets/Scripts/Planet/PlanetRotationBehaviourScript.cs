@@ -1,51 +1,28 @@
 using System;
+using Core;
 using UnityEngine;
 
 public class PlanetRotationBehaviourScript : MonoBehaviour
 {
-    [SerializeField] private GameObject sun;
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] private int rotateDirection = -1;
+    [SerializeField] private float rotationSpeed = 20f;
+    [SerializeField] private RotateDirection rotateDirection = RotateDirection.Counterclockwise;
+    private Vector3 _rotation;
+    private Transform _sun;
 
-    [SerializeField] private int gasPoints;
-    [SerializeField] private int goldPoints;
-
-    private float _size;
-
-    private Planet _planet;
-
-    private Vector3 _distanceVector;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        _distanceVector = -sun.transform.position + transform.position;
-
-        var planetMovement = rotateDirection < 0 ? RotateDirection.Counterclockwise : RotateDirection.Сlockwise;
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        float singleStepAngle = rotationSpeed * Time.deltaTime;
-         
-        RotatePlanet(singleStepAngle);
-    }
-
-    private void RotatePlanet(float angle)
-    {
-        _distanceVector = RotateVector(_distanceVector, angle);
-        transform.position = sun.transform.position + _distanceVector;
-    }
-
-    private Vector3 RotateVector(Vector3 v, float angle)
-    {
-        if (rotateDirection < 0)
+        _sun = GameManager.Instance.sun;
+        
+        _rotation = rotateDirection switch
         {
-            angle = -angle;
-        }
+            RotateDirection.Counterclockwise => Vector3.forward,
+            RotateDirection.Сlockwise => Vector3.back,
+            _ => throw new ArgumentOutOfRangeException()
+        };
+    }
 
-        v = Quaternion.AngleAxis(angle, Vector3.forward) * v;
-        return v;
+    private void Update()
+    {
+        transform.RotateAround(_sun.position, _rotation, rotationSpeed * Time.deltaTime);
     }
 }

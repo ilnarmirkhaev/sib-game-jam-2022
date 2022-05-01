@@ -17,5 +17,8 @@ namespace Core
                 Instance = this;
             }
         }
+
+        public Transform sun;
+        
     }
 }

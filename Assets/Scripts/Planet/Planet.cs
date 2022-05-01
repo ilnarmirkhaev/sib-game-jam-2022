@@ -1,74 +1,49 @@
 using System;
 using UnityEngine;
 
-public class Planet
+public class Planet : MonoBehaviour
 {
-    // init this in constructor
+    public float scaleFactor;
     private float _distance;
     private RotateDirection _rotateDirection;
     private int _goldPoints;
     private int _gasPoints;
 
-    private float _rotationSpeed = 0;
+    [SerializeField] private float rotationSpeed = 0;
 
-    public Planet(float distance, RotateDirection rotateDirection, int goldPoints, int gasPoints, float rotationSpeed)
-    {
-        _distance = distance;
-        _rotateDirection = rotateDirection;
-        _goldPoints = goldPoints;
-        _gasPoints = gasPoints;
-        _rotationSpeed = rotationSpeed;
-    }
-
-    // inner vars
-    private int _countOfGasStations = 0;
-    private int _countOfGoldStations = 0;
-    private int _countOfCannons = 0;
+    private bool _hasCannon;
+    private bool _hasGasStation;
+    private bool _hasGoldStation;
 
 
     public void CreateGasStation()
     {
-        if (_countOfGasStations > 0)
+        if (_hasGasStation)
         {
             throw new GasStationAlreadyExistsException("");
         }
 
-        _countOfGasStations++;
+        _hasGasStation = true;
     }
 
     public void CreateGoldStation()
     {
-        if (_countOfGoldStations > 0)
+        if (_hasGoldStation)
         {
             throw new GoldStationAlreadyExistsException("");
         }
 
-        _countOfGoldStations++;
+        _hasGoldStation = true;
     }
 
     public void CreateCannon()
     {
-        if (_countOfCannons > 0)
+        if (_hasCannon)
         {
             throw new CannonAlreadyExistsException("");
         }
 
-        _countOfCannons++;
-    }
-
-    public int GetCountOfGasStations()
-    {
-        return _countOfGasStations;
-    }
-
-    public int GetCountOfGoldStations()
-    {
-        return _countOfGoldStations;
-    }
-
-    public int GetCountOfCannons()
-    {
-        return _countOfCannons;
+        _hasCannon = true;
     }
 
     public static void Generate()
