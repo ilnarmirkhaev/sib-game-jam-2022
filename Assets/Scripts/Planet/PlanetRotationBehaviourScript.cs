@@ -27,7 +27,8 @@ public class PlanetRotationBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float singleStepAngle = rotationSpeed / 45;
+        float singleStepAngle = rotationSpeed * Time.deltaTime;
+         
         RotatePlanet(singleStepAngle);
     }
 
