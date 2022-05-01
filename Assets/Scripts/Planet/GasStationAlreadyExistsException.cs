@@ -1,7 +1,9 @@
 ﻿using System;
-using UnityEngine;
 
-public class GasStationAlreadyExistsException : Exception
+namespace Planet
 {
-    public GasStationAlreadyExistsException(string message) : base(message) { }
+    public class GasStationAlreadyExistsException : Exception
+    {
+        public GasStationAlreadyExistsException(string message) : base(message) { }
+    }
 }
