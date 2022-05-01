@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Planet
 {
-    
     // init this in constructor
     private float _distance;
     private RotateDirection _rotateDirection;
@@ -20,7 +19,7 @@ public class Planet
         _gasPoints = gasPoints;
         _rotationSpeed = rotationSpeed;
     }
-    
+
     // inner vars
     private int _countOfGasStations = 0;
     private int _countOfGoldStations = 0;
@@ -43,7 +42,7 @@ public class Planet
         {
             throw new GoldStationAlreadyExistsException("");
         }
-        
+
         _countOfGoldStations++;
     }
 
@@ -53,7 +52,7 @@ public class Planet
         {
             throw new CannonAlreadyExistsException("");
         }
-        
+
         _countOfCannons++;
     }
 
@@ -61,12 +60,12 @@ public class Planet
     {
         return _countOfGasStations;
     }
-    
+
     public int GetCountOfGoldStations()
     {
         return _countOfGoldStations;
     }
-    
+
     public int GetCountOfCannons()
     {
         return _countOfCannons;
