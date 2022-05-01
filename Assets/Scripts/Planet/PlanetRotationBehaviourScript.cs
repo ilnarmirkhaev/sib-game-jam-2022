@@ -9,15 +9,17 @@ public class PlanetRotationBehaviourScript : MonoBehaviour
 
     [SerializeField] private int gasPoints;
     [SerializeField] private int goldPoints;
-    
+
     private float _size;
 
     private Planet _planet;
+
     private Vector3 _distanceVector;
+
     // Start is called before the first frame update
     void Start()
     {
-        _distanceVector = - sun.transform.position + transform.position;
+        _distanceVector = -sun.transform.position + transform.position;
 
         var planetMovement = rotateDirection < 0 ? RotateDirection.Counterclockwise : RotateDirection.Сlockwise;
     }
@@ -41,6 +43,7 @@ public class PlanetRotationBehaviourScript : MonoBehaviour
         {
             angle = -angle;
         }
+
         v = Quaternion.AngleAxis(angle, Vector3.forward) * v;
         return v;
     }
