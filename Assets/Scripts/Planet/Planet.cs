@@ -9,7 +9,7 @@ public class Planet : MonoBehaviour
     private int _goldPoints;
     private int _gasPoints;
 
-    [SerializeField] private float rotationSpeed = 0;
+    public float rotationSpeed = 0;
 
     private bool _hasCannon;
     private bool _hasGasStation;
