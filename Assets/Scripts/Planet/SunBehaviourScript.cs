@@ -1,20 +1,12 @@
 using UnityEngine;
 
-public class SunBehaviourScript : MonoBehaviour
+namespace Planet
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SunBehaviourScript : MonoBehaviour
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-
-    public Vector3 GetSunPosition()
-    {
-        return transform.position;
+        public Vector3 GetSunPosition()
+        {
+            return transform.position;
+        }
     }
 }

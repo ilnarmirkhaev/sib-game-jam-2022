@@ -1,53 +1,56 @@
 using System;
 using UnityEngine;
 
-public class Planet : MonoBehaviour
+namespace Planet
 {
-    public float scaleFactor;
-    private float _distance;
-    private RotateDirection _rotateDirection;
-    private int _goldPoints;
-    private int _gasPoints;
-
-    public float rotationSpeed = 0;
-
-    private bool _hasCannon;
-    private bool _hasGasStation;
-    private bool _hasGoldStation;
-
-
-    public void CreateGasStation()
+    public class Planet : MonoBehaviour
     {
-        if (_hasGasStation)
+        public float scaleFactor;
+        private float _distance;
+        private RotateDirection _rotateDirection;
+        private int _goldPoints;
+        private int _gasPoints;
+
+        public float rotationSpeed = 0;
+
+        private bool _hasCannon;
+        private bool _hasGasStation;
+        private bool _hasGoldStation;
+
+
+        public void CreateGasStation()
         {
-            throw new GasStationAlreadyExistsException("");
+            if (_hasGasStation)
+            {
+                throw new GasStationAlreadyExistsException("");
+            }
+
+            _hasGasStation = true;
         }
 
-        _hasGasStation = true;
-    }
-
-    public void CreateGoldStation()
-    {
-        if (_hasGoldStation)
+        public void CreateGoldStation()
         {
-            throw new GoldStationAlreadyExistsException("");
+            if (_hasGoldStation)
+            {
+                throw new GoldStationAlreadyExistsException("");
+            }
+
+            _hasGoldStation = true;
         }
 
-        _hasGoldStation = true;
-    }
-
-    public void CreateCannon()
-    {
-        if (_hasCannon)
+        public void CreateCannon()
         {
-            throw new CannonAlreadyExistsException("");
+            if (_hasCannon)
+            {
+                throw new CannonAlreadyExistsException("");
+            }
+
+            _hasCannon = true;
         }
 
-        _hasCannon = true;
-    }
-
-    public static void Generate()
-    {
-        throw new NotImplementedException();
+        public static void Generate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

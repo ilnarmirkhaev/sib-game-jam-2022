@@ -1,5 +1,3 @@
-using System;
-using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -54,7 +52,7 @@ namespace Core
         {
             var planet = Instantiate(planetPrefab, _sunPosition + new Vector3(distance, 0, 0), Quaternion.identity);
             planet.transform.RotateAround(_sunPosition, Vector3.forward, angle);
-            var planetScript = planet.AddComponent<Planet>();
+            var planetScript = planet.AddComponent<Planet.Planet>();
             planetScript.rotationSpeed = rotationSpeed;
             planet.transform.localScale *= radius;
         }

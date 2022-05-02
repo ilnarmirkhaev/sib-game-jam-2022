@@ -1,7 +1,8 @@
-using UnityEngine;
-
-public enum RotateDirection
+namespace Planet
 {
-    Сlockwise,
-    Counterclockwise
+    public enum RotateDirection
+    {
+        Сlockwise,
+        Counterclockwise
+    }
 }
