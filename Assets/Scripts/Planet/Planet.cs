@@ -1,24 +1,61 @@
-using System;
+using Core;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Planet
 {
     public class Planet : MonoBehaviour
     {
-        public float scaleFactor;
-        private float _distance;
-        private RotateDirection _rotateDirection;
+        // Objects
+        private Transform _sun;
+        private Transform _transform;
+        
+        // Parameters
+        private float _rotationSpeed;
+        private Vector3 _rotation;
+
+        private float _radius;
+        
+        // Resources
         private int _goldPoints;
         private int _gasPoints;
-
-        public float rotationSpeed = 0;
-
+        
+        // Buildings
         private bool _hasCannon;
         private bool _hasGasStation;
         private bool _hasGoldStation;
 
+        private void Start()
+        {
+            _transform = transform;
+            _sun = GameManager.Instance.sun;
+            Init();
+        }
 
-        public void CreateGasStation()
+        private void Init()
+        {
+            _rotation = Random.value switch
+            {
+                >= 0.5f => Vector3.forward,
+                _ => Vector3.back
+            };
+            
+            _rotationSpeed = Random.Range(5, 20);
+            _radius = Random.Range(30, 50);
+            _transform.localScale *= _radius;
+        }
+
+        private void FixedUpdate()
+        {
+            Rotate();
+        }
+
+        private void Rotate()
+        {
+            transform.RotateAround(_sun.position, _rotation, _rotationSpeed * Time.fixedDeltaTime);
+        }
+
+        public void BuildGasStation()
         {
             if (_hasGasStation)
             {
@@ -28,7 +65,7 @@ namespace Planet
             _hasGasStation = true;
         }
 
-        public void CreateGoldStation()
+        public void BuildGoldStation()
         {
             if (_hasGoldStation)
             {
@@ -38,7 +75,7 @@ namespace Planet
             _hasGoldStation = true;
         }
 
-        public void CreateCannon()
+        public void BuildCannon()
         {
             if (_hasCannon)
             {
@@ -46,11 +83,6 @@ namespace Planet
             }
 
             _hasCannon = true;
-        }
-
-        public static void Generate()
-        {
-            throw new NotImplementedException();
         }
     }
 }
