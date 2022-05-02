@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &23711413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1433427184922580792, guid: a0c918b76591f4b8ea9c1b4cdec501dd, type: 3}
+  m_PrefabInstance: {fileID: 877121968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,16 +383,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxEffect: 1.05
---- !u!4 &1273982841 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2259470824486508726, guid: 5e82b3871ea5b434285452614e4a2ecd, type: 3}
-  m_PrefabInstance: {fileID: 4663687214192679116}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1740856696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2770725597806892796, guid: a0c918b76591f4b8ea9c1b4cdec501dd, type: 3}
   m_PrefabInstance: {fileID: 877121968}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1740856700 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4292128940764165651, guid: a0c918b76591f4b8ea9c1b4cdec501dd, type: 3}
+  m_PrefabInstance: {fileID: 877121968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1740856702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23711413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082758e21f3c94d44bb3416c73a56346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1740856700}
+  minCam: 10
+  maxCam: 20
 --- !u!1001 &390084736721450600
 PrefabInstance:
   m_ObjectHideFlags: 0
