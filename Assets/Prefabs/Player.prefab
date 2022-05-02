@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4292128940764165650}
   - component: {fileID: 7915845504169598125}
   - component: {fileID: 8062145574741341377}
+  - component: {fileID: -3259214598119695533}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 30
   takeOffButton: {fileID: 8617405353529801006, guid: e56ef83af91b54b58a8d8404a9057040, type: 3}
-  isAttached: 1
+  isAttached: 0
 --- !u!60 &7915845504169598125
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -180,3 +181,19 @@ MonoBehaviour:
   target: {fileID: 4292128940764165651}
   minCam: 40
   maxCam: 70
+--- !u!114 &-3259214598119695533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433427184922580792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d7c4d3d608d174fab4ca7b83680e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRange: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64

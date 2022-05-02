@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Player
@@ -53,6 +54,29 @@ namespace Player
         {
             isAttached = false;
             takeOffButton.SetActive(false);
+            GetComponent<PlanetDetection>().timeFromDetachment = 0;
+            transform.parent = null;
+        }
+
+        public void AttachToPlanet(Transform planet)
+        {
+            transform.SetParent(planet);
+            var position = _rb.position;
+            var desiredPosition = Physics2D.Raycast(position, (Vector2)planet.position - position).point;
+            var desiredRotation = position - (Vector2)planet.position;
+
+            isAttached = true;
+            takeOffButton.SetActive(true);
+            
+            StartCoroutine(AttachmentCoroutine(desiredPosition));
+        }
+        
+        private IEnumerator AttachmentCoroutine(Vector3 desiredPosition)
+        {
+            if (Vector3.Distance(_rb.position, desiredPosition) < 0.1f) yield break;
+            
+            transform.position = Vector3.Lerp(_rb.position, desiredPosition, 0.5f);
+            yield return AttachmentCoroutine(desiredPosition);
         }
     }
 }
