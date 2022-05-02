@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -240,11 +240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770725597806892796, guid: a0c918b76591f4b8ea9c1b4cdec501dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.049268328
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2770725597806892796, guid: a0c918b76591f4b8ea9c1b4cdec501dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.009743496
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2770725597806892796, guid: a0c918b76591f4b8ea9c1b4cdec501dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -398,14 +398,6 @@ PrefabInstance:
     - target: {fileID: 390084735677596289, guid: ad4b747258541fd44a80b97eabd59d52, type: 3}
       propertyPath: m_Name
       value: Game Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 390084735677596290, guid: ad4b747258541fd44a80b97eabd59d52, type: 3}
-      propertyPath: sun
-      value: 
-      objectReference: {fileID: 1273982841}
-    - target: {fileID: 390084735677596290, guid: ad4b747258541fd44a80b97eabd59d52, type: 3}
-      propertyPath: orbitCount
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 390084735677596291, guid: ad4b747258541fd44a80b97eabd59d52, type: 3}
       propertyPath: m_RootOrder

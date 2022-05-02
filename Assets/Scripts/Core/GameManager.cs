@@ -19,14 +19,17 @@ namespace Core
             }
         }
 
-        public int orbitCount = 42;
-        public Transform sun;
-        private Vector3 _sunPosition;
-        public GameObject planetPrefab;
+        public int orbitCount;
+        [HideInInspector] public Transform sun;
+        public GameObject[] planetPrefabs;
 
         private void Start()
         {
-            _sunPosition = sun.position;
+            sun = GameObject.Find("Sun").transform;
+            
+            if (planetPrefabs.Length <= 0) return;
+            
+            orbitCount = Random.Range(5, 11);
             GeneratePlanets();
         }
 
@@ -35,26 +38,29 @@ namespace Core
             var distance = 0f;
             for (var i = 0; i < orbitCount; i++)
             {
-                distance += Random.Range(90, 140);
-                var rotationSpeed = Random.Range(5, 20);
-                var planetCount = Random.Range(1, 4);
-                float angle = Random.Range(0, 360);
+                // var planetCount = Random.Range(1, 4);
+                var planetCount = 1;
+                distance += 50;
+                // float angleOffset = Random.Range(0, 360);
+                float angleOffset = 0;
+                
                 for (var j = 0; j < planetCount; j++)
                 {
-                    var radius = Random.Range(25, 80);
-                    angle += 360f / planetCount;
-                    GeneratePlanet(distance, radius, rotationSpeed, angle);
+                    angleOffset += 360f / planetCount;
+                    
+                    SpawnPlanet(distance, angleOffset);
                 }
             }
         }
 
-        private void GeneratePlanet(float distance, float radius, float rotationSpeed, float angle)
+        private void SpawnPlanet(float distance, float angleOffset)
         {
-            var planet = Instantiate(planetPrefab, _sunPosition + new Vector3(distance, 0, 0), Quaternion.identity);
-            planet.transform.RotateAround(_sunPosition, Vector3.forward, angle);
-            var planetScript = planet.AddComponent<Planet.Planet>();
-            planetScript.rotationSpeed = rotationSpeed;
-            planet.transform.localScale *= radius;
+            var offset = new Vector3(distance, 0, 0);
+            var i = Random.Range(0, planetPrefabs.Length);
+            
+            
+            var planet = Instantiate(planetPrefabs[i], sun.position + offset, Quaternion.identity);
+            planet.transform.RotateAround(sun.position, Vector3.forward, angleOffset);
         }
     }
 }
