@@ -11,7 +11,10 @@ namespace Player
         private Vector2 _lookDirection;
         private Vector2 _mousePosition;
         private Camera _camera;
-
+        
+        public GameObject takeOffButton;
+        public bool isAttached = true;
+        
         private void Awake()
         {
             _camera = Camera.main;
@@ -20,7 +23,10 @@ namespace Player
 
         private void Update()
         {
-            HandleInput();
+            if (!isAttached)
+            {
+                HandleInput();
+            }
         }
 
         private void FixedUpdate()
@@ -41,6 +47,12 @@ namespace Player
 
             var angle = Mathf.Atan2(rotationVector.y, rotationVector.x) * Mathf.Rad2Deg - 90f;
             _rb.rotation = angle;
+        }
+
+        public void TakeOff()
+        {
+            isAttached = false;
+            takeOffButton.SetActive(false);
         }
     }
 }
