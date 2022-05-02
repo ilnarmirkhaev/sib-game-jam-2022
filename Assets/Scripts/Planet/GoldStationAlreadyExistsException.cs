@@ -1,8 +1,11 @@
 using System;
 
-public class GoldStationAlreadyExistsException : Exception
+namespace Planet
 {
-    public GoldStationAlreadyExistsException(string message) : base(message)
+    public class GoldStationAlreadyExistsException : Exception
     {
+        public GoldStationAlreadyExistsException(string message) : base(message)
+        {
+        }
     }
 }

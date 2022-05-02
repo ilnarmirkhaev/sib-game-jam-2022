@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbafa0fe8577c401a9efc3998784ca37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2133010127}
+  player: {fileID: 1740856696}
   smooth: 5
 --- !u!1001 &877121968
 PrefabInstance:
@@ -285,11 +285,6 @@ Transform:
   m_PrefabInstance: {fileID: 4663687214192679116}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1740856696 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2770725597806892796, guid: a0c918b76591f4b8ea9c1b4cdec501dd, type: 3}
-  m_PrefabInstance: {fileID: 877121968}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2133010127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2770725597806892796, guid: a0c918b76591f4b8ea9c1b4cdec501dd, type: 3}
   m_PrefabInstance: {fileID: 877121968}
