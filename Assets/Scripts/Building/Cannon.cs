@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
 
-public class Cannon : MonoBehaviour, Building
+namespace Building
 {
-    public void Action()
+    public class Cannon : MonoBehaviour, Building
     {
-        throw new NotImplementedException();
+        public void Action()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

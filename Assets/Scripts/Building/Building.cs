@@ -1,6 +1,7 @@
-using UnityEngine;
-
-public interface Building
+namespace Building
 {
-    public void Action();
+    public interface Building
+    {
+        public void Action();
+    }
 }
