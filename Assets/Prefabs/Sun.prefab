@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2259470824486508726}
   - component: {fileID: 4835746300863520550}
-  - component: {fileID: 4912431304535681736}
+  - component: {fileID: 6894161918691558671}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4912431304535681736
+--- !u!58 &6894161918691558671
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,4 +100,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.42
+  m_Radius: 0.4
