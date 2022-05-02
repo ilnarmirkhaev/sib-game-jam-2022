@@ -122,6 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
+  takeOffButton: {fileID: 8617405353529801006, guid: e56ef83af91b54b58a8d8404a9057040, type: 3}
+  isAttached: 1
 --- !u!60 &7915845504169598125
 PolygonCollider2D:
   m_ObjectHideFlags: 0
